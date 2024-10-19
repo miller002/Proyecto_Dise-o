@@ -1,6 +1,6 @@
-#include <esp_sleep.h> // Librería para control de sueño profundo
+#include <esp_sleep.h>//Librería para control de sueño profundo
 
-const int ledPin = 2;//LED interno (para la ESP32 es GPIO2)
+const int ledPin = 2;//LED interno de la ESP32
 
 
 void setup() {
@@ -8,10 +8,8 @@ void setup() {
   Serial.begin(115200);
 
   randomSeed(esp_random());//Inicializar la semilla aleatoria
-  
   //Función que maneja el modo activo (operaciones aleatorias)
   modoActivoAleatorio();
-
   //Despertar después de 10 segundos en sueño profundo
   esp_sleep_enable_timer_wakeup(10000000);
   esp_deep_sleep_start();//Entra en sueño profundo
